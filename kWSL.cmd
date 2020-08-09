@@ -1,5 +1,5 @@
 @ECHO OFF
-SET GITORG=DesktopECHO
+SET GITORG=linglyz
 SET GITPRJ=kWSL
 SET BASE=https://github.com/%GITORG%/%GITPRJ%/raw/master
 REM ## UAC Check 
@@ -53,7 +53,7 @@ IF NOT EXIST %TEMP%\excludeWSL.ps1 POWERSHELL.EXE -Command "wget %BASE%/excludeW
 POWERSHELL.EXE  -executionpolicy bypass -command "%TEMP%\excludeWSL.ps1"
 
 REM ## Configure
-%GO% "cd /tmp ; wget -q http://deb.devuan.org/devuan/pool/main/d/devuan-keyring/devuan-keyring_2017.10.03_all.deb ; wget -q http://ftp.br.debian.org/debian/pool/main/c/ca-certificates/ca-certificates_20200601~deb9u1_all.deb ; wget -q http://ftp.br.debian.org/debian/pool/main/o/openssl/openssl_1.1.0l-1~deb9u1_amd64.deb ; wget -q http://ftp.br.debian.org/debian/pool/main/o/openssl/libssl1.1_1.1.0l-1~deb9u1_amd64.deb"
+%GO% "cd /tmp ; wget -q http://deb.devuan.org/devuan/pool/main/d/devuan-keyring/devuan-keyring_2017.10.03_all.deb ; wget -q http://ftp.th.debian.org/debian/pool/main/c/ca-certificates/ca-certificates_20200601~deb9u1_all.deb ; wget -q http://ftp.th.debian.org/debian/pool/main/o/openssl/openssl_1.1.0l-1~deb9u1_amd64.deb ; wget -q http://ftp.th.debian.org/debian/pool/main/o/openssl/libssl1.1_1.1.0l-1~deb9u1_amd64.deb"
 %GO% "cd /tmp ; dpkg -i --force-all ./devuan-keyring_2017.10.03_all.deb ./ca-certificates_20200601~deb9u1_all.deb ./openssl_1.1.0l-1~deb9u1_amd64.deb ./libssl1.1_1.1.0l-1~deb9u1_amd64.deb" > NUL
 %GO% "echo deb     http://deb.devuan.org/merged chimaera main >  /etc/apt/sources.list" 
 %GO% "echo deb-src http://deb.devuan.org/merged chimaera main >> /etc/apt/sources.list"
