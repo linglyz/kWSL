@@ -13,8 +13,8 @@ NET SESSION >NUL 2>&1
   )
 
 REM ## Enable WSL2
-POWERSHELL.EXE -command "Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux"
-POWERSHELL.EXE -command "Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform"
+POWERSHELL.EXE -command "Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+POWERSHELL.EXE -command "Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
 
 REM ## Set WSL2 and TimeStamp
 WSL.EXE --set-default-version 2 > NUL
