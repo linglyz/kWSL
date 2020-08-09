@@ -13,7 +13,10 @@
 ```
 PowerShell -executionpolicy bypass -command "wget https://github.com/DesktopECHO/kWSL/raw/master/kWSL.cmd -UseBasicParsing -OutFile kWSL.cmd ; .\kWSL.cmd"
 ```
-
+OR (For Windows 10 2004 and higher)
+```
+PowerShell -executionpolicy bypass -command "wget https://github.com/DesktopECHO/kWSL/raw/master/kWSL2.cmd -UseBasicParsing -OutFile kWSL.cmd ; .\kWSL.cmd"
+```
 You will be asked a few questions.  The install script finds the current DPI scaling, you can set your own value if needed:
 
 ```
@@ -70,7 +73,7 @@ Upon completion you'll be logged into an attractive and fully functional KDE Pla
 
    Reboot your PC.  kWSL will automatically start at boot, no need to login to Windows.
 
-**Convert to WSL2 Virtual Machine:**
+**Convert to WSL2 Virtual Machine:** - For kWSL on WSL1
 -  kWSL will convert easily to WSL2.  Only one additional adjustment is necessary; change the hostname in the .RDP connection file to point at the WSL2 instance.  First convert the instance:
     ```wsl --set-version [DistroName] 2```
 - Assuming we're using the default distro name of ```kWSL``` (use whatever name you assigned to the distro)  Right click the .RDP file in Windows, click Edit.  Change the Computer name to your Windows hostname plus **```-kWSL.local```**  Your WSL2 instance resolves seamlessly using multicast DNS  
